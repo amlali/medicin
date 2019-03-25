@@ -1,0 +1,29 @@
+{
+  "name": "medicine",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@sendgrid/mail": "^6.3.1",
+    "bcryptjs": "^2.4.3",
+    "bluebird": "^3.5.3",
+    "cors": "^2.8.5",
+    "csvtojson": "^2.0.8",
+    "dotenv": "^6.2.0",
+    "express": "^4.16.4",
+    "host": "0.0.1",
+    "i": "^0.3.6",
+    "jsonwebtoken": "^8.5.0",
+    "mongoose": "^5.4.19",
+    "npm": "^6.9.0",
+    "redis": "^2.8.0",
+    "request": "^2.88.0",
+    "ucheck": "^1.2.9",
+    "uuid": "^3.3.2"
+  }
+}
