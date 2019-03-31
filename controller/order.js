@@ -1,6 +1,6 @@
-let User =require('../models/user')
-let Security = require('../auth.js')
-let Roles =require('../systemArchi/roles')
+ let User =require('../models/user')
+//let Security = require('../auth.js')
+//let Roles =require('../systemArchi/roles')
 let uCheck                    = require('ucheck');
 let Validation                = require('../static_arch/validation.js');
 let User       
@@ -11,11 +11,11 @@ module.exports={
         let x = [
 
             {
-                param: 'email',
-                label: Say.lng(req).label.email,
+                param: 'description',
+                label: description,
                 required: true,
                 type: 'string',
-                regex: Validation.regex.email
+                regex: Validation.regex.description
             }
             ,{
                 param: 'password',
@@ -33,4 +33,8 @@ module.exports={
 
         if(ucheck.hasErrors()){
             return res.status(400).json({error: ucheck.getErrors()});
-        } else {}}}
+        } else {
+
+        }
+    }
+}

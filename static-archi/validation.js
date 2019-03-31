@@ -100,19 +100,14 @@ var regex = {
 
 	url: "((https?:\\/\\/(?:www\\.|(?!www)))?[^\\s\\.]+\\.[^\\s]{2,}|www\\.[^\\s]+\\.[^\\s]{2,})",
 	email: "^[-a-zA-Z0-9~!$%^&*_=+}{\\'?]+(\\.[-a-zA-Z0-9~!$%^&*_=+}{\\'?]+)*@([a-zA-Z0-9_][-a-zA-Z0-9_]*(\\.[-a-zA-Z0-9_]+)*\\.(aero|arpa|biz|com|coop|edu|gov|info|int|mil|museum|name|net|org|pro|travel|mobi|[a-z][a-z])|([0-9]{1,3}\\.[0-9]{1,3}\\.[0-9]{1,3}\\.[0-9]{1,3}))(:[0-9]{1,5})?$",
-	pin: "^[0-9]{" + length.pin.min + "," + length.pin.max + "}$",
 	password:"^(?=.*[A-Za-z])(?=.*\\d)(?=.*[$@$!%*#?&])[A-Za-z\\d$@$!%*#?&]{" + length.password.min + "," + length.password.max + "}$",
 	hex: "^#?([a-f0-9]{6}|[a-f0-9]{3})$",
-	slug: "^[a-z0-9-]+$",
-	htmlTag: "^(?:(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\\.){3}(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)$",
 	number: "^[0-9]+$",
 	longNumber: "^[0-9]{"+length.longNumber.min +","+length.longNumber.max +"}$",
 	shortId: "^[0-9]{"+length.shortId.min +","+ length.shortId.max+"}$",
 	year: "^[0-9]{4}$",
 	serialNumber: "^[0-9\\u0660-\\u0669]{"+length.serialNumber.min +","+ length.serialNumber.max+"}$",
-	arDesc: "^[\\u0621-\\u064A0-9\\u0660-\\u0669 \\d$@$!%*?& \\-\\n\r\\.]{"+length.arDesc.min+","+length.arDesc.max+"}$",
 	desc: "^[a-zA-Z0-9\\s]{"+length.desc.min + "," + length.desc.max+"}$",
-	carId : "^[\\u0621-\\u064A0-9\\u0660-\\u0669\\d]{"+length.carId.min+","+length.carId.max+"}$",
 	arFullname: "^[\\u0621-\\u064A\\s]{"+ length.arFullname.min +"," + length.arFullname.max +"}$",
 	fullname:"^([a-zA-Z]{3,10}(\\s[a-zA-Z]{3,10}){1,2})$",
 	nationalId: "^(2|3)[0-9][0-9][0-1][0-9][0-3][0-9](01|02|03|04|11|12|13|14|15|16|17|18|19|21|22|23|24|25|26|27|28|29|31|32|33|34|35|88)\\d\\d\\d\\d\\d$",
@@ -129,7 +124,6 @@ var regex = {
 	negativeShortId: "^-?\\d{"+length.shortId.min +","+ length.shortId.max+"}$",
 	username: "^[a-zA-Z0-9]{"+length.username.min +","+ length.username.max+"}$",
 	nationality: "^[a-zA-Z]{"+length.nationality.min +","+ length.nationality.max+"}$",
-	uniqueID:"^[a-zA-Z0-9]{"+length.uniqueID.min +","+ length.uniqueID.max+"}$",
 }
 	
 module.exports = {

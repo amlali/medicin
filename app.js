@@ -11,7 +11,7 @@ var bluebird         = require('bluebird');
 bluebird.promisifyAll(redis);
 global.REDIS_CLIENT         = redis.createClient();
 
-let port             = process.env.PORT || 3000
+let port             = process.env.PORT || 3001
 mongoose.Promise     = global.Promise;
 mongoose.connect(config.dbURI,{ useNewUrlParser: true });
 

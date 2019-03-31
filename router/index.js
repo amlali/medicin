@@ -1,4 +1,6 @@
 var users              = require('./routes/user');
 module.exports = function (app) {
-    app.use(users);
+    let namespace='/api'
+    
+    app.use(namespace,users);
 }
