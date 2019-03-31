@@ -9,7 +9,7 @@ var adminDefaults = {
 //who can register for whome
 var regArch = {
 	//admin can register for supervisor and rider
-	admin: ['vendor'],
+	admin: ['vendor','admin'],
 }
 
 

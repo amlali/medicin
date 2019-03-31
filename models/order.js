@@ -8,7 +8,7 @@ var Order = mongoose.Schema({
     address              : { type: String},
     items                : [{
         
-        item             : { type: mongoose.Schema.Types.ObjectId, ref: 'Item' },
+        item             : { type: mongoose.Schema.Types.ObjectId, ref: 'Stock' },
         quantity         : { type: Number}
     }],
     canceledBy           : { type: mongoose.Schema.Types.ObjectId, ref: 'User' },
@@ -24,6 +24,10 @@ var Order = mongoose.Schema({
     acceptedBy           : [{ type: mongoose.Schema.Types.ObjectId, ref: 'User' }],
     acceptedAt           : { type: Date, default: Date.now },
     accepted             : { type: Boolean, default:false},
+    loc                  : {
+        type: [Number],  
+        index: '2d'      
+    },
 
 
 
@@ -33,15 +37,13 @@ Order.methods.newOrder=function(order){
 
     this.code =uuid()
     this.user=order._id
-    this.itmes=order.items
+    this.itmes.push(order.item);
     this.createdAt=Date.now()
     this.address=order.address
 
 }
 Order.methods.updateOrder=function(items){
-    
-  this.items.item=items.item
-  this.items.quantity=items.quantity
+  
 }
 Order.methods.calculatePrice=function(){
 

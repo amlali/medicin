@@ -13,9 +13,11 @@ module.exports={
             if(req.headers.ticket){
                 decode=await authentication.verfiy(req.headers.ticket)
                if(decode){
+              
                 if(allowedRoles.includes(decode.user.role)){  
                     if(await redis.isValid(decode.session)){ 
                         if( await redis.validUsage(decode)){
+                            req.ticket=decode
                             console.log('success');
                             next()
                         }else{

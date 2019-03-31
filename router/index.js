@@ -1,6 +1,9 @@
 var users              = require('./routes/user');
+var cards              = require('./routes/cart');
+
 module.exports = function (app) {
-    let namespace='/api'
+    var nameSpace = '/api';
     
-    app.use(namespace,users);
+    app.use(nameSpace,users);
+    app.use(nameSpace,cards);
 }

@@ -8,7 +8,7 @@ var Stock = mongoose.Schema({
     image                : { type: mongoose.Schema.Types.Mixed},
     expireDate           : { type: Date},
     availability         : { type: Boolean, default:true},
-    vendor               : { type: mongoose.Schema.Types.ObjectId, ref: 'User' },
+    branchName           : { type: String},
     quantatiy            : { type: Number},
     category             : { type: String},
 
@@ -25,17 +25,19 @@ Stock.methods.addItem = function(obj){
     this.price            =    obj.price          
     this.image            =    obj.image     
     this.expireDate       =    obj.expireDate      
-    this.vendor           =    obj.vendor
+    this.branchName       =    obj.branchName
     this.quantatiy        =    obj.quantatiy 
     this.category         =    obj.category
 },
 
-Stock.methods.useItem = function(obj){
+Stock.methods.usedItems = function(obj){
 
     this.quantatiy       -=  obj.quantatiy 
-    if(this.quantatiy<=0) this.availability=false;
+    if(this.quantatiy<=0) {
+        this.availability=false
+    };
 }
-Stock.methods.updatequantatiy=function(obj){
+Stock.methods.updateQuantatiy=function(obj){
     this.quantatiy       +=  obj.quantatiy 
     this.availability     = true;
 }
@@ -43,7 +45,7 @@ Stock.methods.updatequantatiy=function(obj){
 
 
 
-User.pre('save', function() {
+Stock.pre('save', function() {
 	this.updatedAt = new Date();
 });
 
